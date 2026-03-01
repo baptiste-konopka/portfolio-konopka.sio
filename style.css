@@ -204,15 +204,23 @@ section:hover {
 }
 
 section h2 {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     font-size: 2rem;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
+}
+
+section h2 .emoji {
+    font-style: normal;
+    margin-right: 10px;
+}
+
+section h2 .title-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 section h2::after {
@@ -468,6 +476,47 @@ footer {
         padding: 30px 20px;
         font-size: 1.1rem;
     }
+}
+
+/* ===============================
+   IMAGE ZOOM MODAL
+================================ */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+}
+
+.image-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.image-modal img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.zoomable-image {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoomable-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 120, 255, 0.4) !important;
 }
 
 /* ===============================
