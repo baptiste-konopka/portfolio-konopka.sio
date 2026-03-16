@@ -520,6 +520,53 @@ footer {
 }
 
 /* ===============================
+   SCROLL TO TOP BUTTON
+================================ */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 120, 255, 0.3);
+}
+
+.scroll-to-top.visible {
+    display: flex;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 120, 255, 0.5);
+    background: linear-gradient(135deg, #0078ff, #00c6ff);
+}
+
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+body.light-mode .scroll-to-top {
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    border-color: var(--primary-color);
+}
+
+body.light-mode .scroll-to-top svg {
+    fill: var(--primary-color);
+}
+
+/* ===============================
    UTILITIES
 ================================ */
 
